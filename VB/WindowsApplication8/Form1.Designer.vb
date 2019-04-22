@@ -1,6 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
-Namespace WindowsApplication8
+﻿Namespace WindowsApplication8
 	Partial Public Class Form1
 		''' <summary>
 		''' Required designer variable.
@@ -27,8 +25,6 @@ Namespace WindowsApplication8
 		Private Sub InitializeComponent()
 			Me.components = New System.ComponentModel.Container()
 			Me.gridControl1 = New DevExpress.XtraGrid.GridControl()
-			Me.ordersBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-			Me.nwindDataSet = New WindowsApplication8.nwindDataSet()
 			Me.gridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
 			Me.colOrderID = New DevExpress.XtraGrid.Columns.GridColumn()
 			Me.colCustomerID = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -36,33 +32,18 @@ Namespace WindowsApplication8
 			Me.colOrderDate = New DevExpress.XtraGrid.Columns.GridColumn()
 			Me.colRequiredDate = New DevExpress.XtraGrid.Columns.GridColumn()
 			Me.colFreight = New DevExpress.XtraGrid.Columns.GridColumn()
-			Me.ordersTableAdapter = New WindowsApplication8.nwindDataSetTableAdapters.OrdersTableAdapter()
 			CType(Me.gridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-			CType(Me.ordersBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-			CType(Me.nwindDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.gridView1, System.ComponentModel.ISupportInitialize).BeginInit()
 			Me.SuspendLayout()
 			' 
 			' gridControl1
 			' 
-			Me.gridControl1.DataSource = Me.ordersBindingSource
-			Me.gridControl1.EmbeddedNavigator.Name = ""
 			Me.gridControl1.Location = New System.Drawing.Point(26, 39)
 			Me.gridControl1.MainView = Me.gridView1
 			Me.gridControl1.Name = "gridControl1"
 			Me.gridControl1.Size = New System.Drawing.Size(588, 337)
 			Me.gridControl1.TabIndex = 0
 			Me.gridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() { Me.gridView1})
-			' 
-			' ordersBindingSource
-			' 
-			Me.ordersBindingSource.DataMember = "Orders"
-			Me.ordersBindingSource.DataSource = Me.nwindDataSet
-			' 
-			' nwindDataSet
-			' 
-			Me.nwindDataSet.DataSetName = "nwindDataSet"
-			Me.nwindDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
 			' 
 			' gridView1
 			' 
@@ -72,7 +53,8 @@ Namespace WindowsApplication8
 			Me.gridView1.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() { New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Custom, "Freight", Me.colFreight, "", 1)})
 			Me.gridView1.Name = "gridView1"
 			Me.gridView1.SortInfo.AddRange(New DevExpress.XtraGrid.Columns.GridColumnSortInfo() { New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.colCustomerID, DevExpress.Data.ColumnSortOrder.Ascending)})
-'			Me.gridView1.CustomSummaryCalculate += New DevExpress.Data.CustomSummaryEventHandler(Me.gridView1_CustomSummaryCalculate);
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.gridView1.CustomSummaryCalculate += new DevExpress.Data.CustomSummaryEventHandler(this.gridView1_CustomSummaryCalculate);
 			' 
 			' colOrderID
 			' 
@@ -122,10 +104,6 @@ Namespace WindowsApplication8
 			Me.colFreight.Visible = True
 			Me.colFreight.VisibleIndex = 4
 			' 
-			' ordersTableAdapter
-			' 
-			Me.ordersTableAdapter.ClearBeforeFill = True
-			' 
 			' Form1
 			' 
 			Me.AutoScaleDimensions = New System.Drawing.SizeF(6F, 13F)
@@ -134,10 +112,9 @@ Namespace WindowsApplication8
 			Me.Controls.Add(Me.gridControl1)
 			Me.Name = "Form1"
 			Me.Text = "Form1"
-'			Me.Load += New System.EventHandler(Me.Form1_Load);
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.Load += new System.EventHandler(this.Form1_Load);
 			CType(Me.gridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-			CType(Me.ordersBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-			CType(Me.nwindDataSet, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.gridView1, System.ComponentModel.ISupportInitialize).EndInit()
 			Me.ResumeLayout(False)
 
@@ -147,9 +124,6 @@ Namespace WindowsApplication8
 
 		Private gridControl1 As DevExpress.XtraGrid.GridControl
 		Private WithEvents gridView1 As DevExpress.XtraGrid.Views.Grid.GridView
-		Private nwindDataSet As nwindDataSet
-		Private ordersBindingSource As System.Windows.Forms.BindingSource
-		Private ordersTableAdapter As WindowsApplication8.nwindDataSetTableAdapters.OrdersTableAdapter
 		Private colOrderID As DevExpress.XtraGrid.Columns.GridColumn
 		Private colCustomerID As DevExpress.XtraGrid.Columns.GridColumn
 		Private colEmployeeID As DevExpress.XtraGrid.Columns.GridColumn

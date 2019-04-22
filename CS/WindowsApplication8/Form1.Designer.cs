@@ -30,8 +30,6 @@ namespace WindowsApplication8
         {
             this.components = new System.ComponentModel.Container();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nwindDataSet = new WindowsApplication8.nwindDataSet();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colOrderID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCustomerID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -39,17 +37,12 @@ namespace WindowsApplication8
             this.colOrderDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colRequiredDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFreight = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ordersTableAdapter = new WindowsApplication8.nwindDataSetTableAdapters.OrdersTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nwindDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
             // 
-            this.gridControl1.DataSource = this.ordersBindingSource;
-            this.gridControl1.EmbeddedNavigator.Name = "";
             this.gridControl1.Location = new System.Drawing.Point(26, 39);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -57,16 +50,6 @@ namespace WindowsApplication8
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            // 
-            // ordersBindingSource
-            // 
-            this.ordersBindingSource.DataMember = "Orders";
-            this.ordersBindingSource.DataSource = this.nwindDataSet;
-            // 
-            // nwindDataSet
-            // 
-            this.nwindDataSet.DataSetName = "nwindDataSet";
-            this.nwindDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
             // 
@@ -134,10 +117,6 @@ namespace WindowsApplication8
             this.colFreight.Visible = true;
             this.colFreight.VisibleIndex = 4;
             // 
-            // ordersTableAdapter
-            // 
-            this.ordersTableAdapter.ClearBeforeFill = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -148,8 +127,6 @@ namespace WindowsApplication8
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nwindDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -159,9 +136,6 @@ namespace WindowsApplication8
 
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private nwindDataSet nwindDataSet;
-        private System.Windows.Forms.BindingSource ordersBindingSource;
-        private WindowsApplication8.nwindDataSetTableAdapters.OrdersTableAdapter ordersTableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn colOrderID;
         private DevExpress.XtraGrid.Columns.GridColumn colCustomerID;
         private DevExpress.XtraGrid.Columns.GridColumn colEmployeeID;

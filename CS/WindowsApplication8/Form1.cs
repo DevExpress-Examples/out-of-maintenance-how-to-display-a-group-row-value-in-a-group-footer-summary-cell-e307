@@ -19,9 +19,7 @@ namespace WindowsApplication8
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'nwindDataSet.Orders' table. You can move, or remove it, as needed.
-            this.ordersTableAdapter.Fill(this.nwindDataSet.Orders);
-
+            gridControl1.DataSource = DataHelper.CreateTable();
         }
 
         private void gridView1_CustomSummaryCalculate(object sender, DevExpress.Data.CustomSummaryEventArgs e)
@@ -30,5 +28,6 @@ namespace WindowsApplication8
                 e.TotalValue = (sender as GridView).GetGroupRowValue(e.RowHandle);
             }
         }
+
     }
 }

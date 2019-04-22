@@ -21,7 +21,7 @@ Namespace WindowsApplication8
 		End Sub
 
 		Private Sub gridView1_CustomSummaryCalculate(ByVal sender As Object, ByVal e As DevExpress.Data.CustomSummaryEventArgs) Handles gridView1.CustomSummaryCalculate
-			If e.SummaryProcess = DevExpress.Data.CustomSummaryProcess.Finalize AndAlso DirectCast(e.Item, GridGroupSummaryItem).Tag.Equals(1) Then
+			If e.SummaryProcess = DevExpress.Data.CustomSummaryProcess.Finalize AndAlso CType(e.Item, GridGroupSummaryItem).Tag.Equals(1) Then
 				e.TotalValue = (TryCast(sender, GridView)).GetGroupRowValue(e.RowHandle)
 			End If
 		End Sub
